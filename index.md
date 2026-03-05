@@ -5,14 +5,15 @@ title: "arXiv Daily Papers"
 
 # arXiv Daily Papers
 
-Automated daily arXiv paper crawler. Live at: https://Leeez.github.io/arxiv-daily-papers
+自动追踪 arXiv 每日新论文，使用 LLM 进行语义相关性评分。  
+网站地址：[https://Leeez.github.io/arxiv-daily-papers](https://Leeez.github.io/arxiv-daily-papers)
 
-**Tracked keywords:** `3D Gaussian splatting`, `robot manipulation`, `diffusion model for robotics`, `vision language model`, `embodied AI`
+**追踪关键词：** 3D Gaussian splatting、robot manipulation、diffusion model for robotics、vision language model、embodied AI
 
-## Reports
+## 历史报告
 
-| Date | Papers |
-|------|--------|
+| 日期 | 精选论文数 |
+|------|-----------|
 | [2026-03-05](papers/2026-03-05) | 20 |
 
-*Index last updated: 2026-03-05 09:37 UTC*
+*索引更新时间：2026-03-05 10:32 UTC*
