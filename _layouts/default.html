@@ -363,6 +363,91 @@
       margin-bottom: 5px;
     }
 
+    /* ── Filter bar ────────────────────────────── */
+    .filter-bar {
+      background: var(--surface);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .filter-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-label {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      min-width: 42px;
+    }
+    .filter-toggle {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .82rem;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all .15s;
+      font-family: var(--sans);
+    }
+    .filter-toggle:hover { border-color: var(--teal); color: var(--teal); }
+    .filter-toggle.active {
+      background: #ecfdf5;
+      border-color: var(--score-hi);
+      color: var(--score-hi);
+      font-weight: 600;
+    }
+    .kw-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+    .kw-btn {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: .8rem;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all .15s;
+      font-family: var(--sans);
+    }
+    .kw-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .kw-btn.active {
+      background: #e0f2fe;
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .filter-count {
+      font-size: .78rem;
+      color: var(--text-3);
+      padding-top: 2px;
+    }
+
+    /* Hidden cards (filtered out) */
+    .paper-card[hidden] { display: none !important; }
+
+    /* Open-source badge */
+    .code-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #ecfdf5;
+      color: var(--score-hi);
+      border: 1px solid #a7f3d0;
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
     /* ── Empty state ───────────────────────────── */
     .empty-state {
       text-align: center;
@@ -418,6 +503,60 @@
     <p>由 <strong>arxiv-robot</strong> 每日自动更新 &nbsp;·&nbsp; LLM 语义相关性评分 &nbsp;·&nbsp; <a href="https://arxiv.org" target="_blank">arXiv.org</a></p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var bar = document.getElementById('filter-bar');
+  if (!bar) return; // Only run on report pages
+
+  var cards     = Array.from(document.querySelectorAll('.paper-card'));
+  var countEl   = document.getElementById('filter-count');
+  var codeBtn   = document.getElementById('code-filter');
+  var kwBtns    = Array.from(document.querySelectorAll('.kw-btn'));
+  var codeOnly  = false;
+  var activeKw  = '';
+
+  function applyFilters() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var hasCode  = card.dataset.hasCode === 'true';
+      var cardKws  = (card.dataset.keywords || '')
+                      .split(',')
+                      .map(function (s) { return s.trim(); });
+
+      var passCode = !codeOnly || hasCode;
+      var passKw   = !activeKw  || cardKws.indexOf(activeKw) !== -1;
+
+      if (passCode && passKw) {
+        card.removeAttribute('hidden');
+        visible++;
+      } else {
+        card.setAttribute('hidden', '');
+      }
+    });
+    if (countEl) {
+      countEl.textContent = '显示 ' + visible + ' / ' + cards.length + ' 篇';
+    }
+  }
+
+  if (codeBtn) {
+    codeBtn.addEventListener('click', function () {
+      codeOnly = !codeOnly;
+      codeBtn.classList.toggle('active', codeOnly);
+      applyFilters();
+    });
+  }
+
+  kwBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      kwBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeKw = btn.dataset.kw;
+      applyFilters();
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
