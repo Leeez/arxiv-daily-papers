@@ -1,0 +1,19 @@
+{
+  "date": "2026-03-17",
+  "paper_count": 0,
+  "config_keywords": [
+    "3D Gaussian splatting",
+    "robot manipulation",
+    "diffusion model for robotics",
+    "vision language model",
+    "embodied AI",
+    "vision language action"
+  ],
+  "config_categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG",
+    "cs.RO"
+  ],
+  "papers": []
+}
