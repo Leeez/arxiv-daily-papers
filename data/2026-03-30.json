@@ -1,0 +1,641 @@
+{
+  "date": "2026-03-30",
+  "paper_count": 27,
+  "config_keywords": [
+    "3D Gaussian",
+    "Gaussian Splatting",
+    "robot",
+    "manipulation",
+    "diffusion",
+    "vision language",
+    "embodied",
+    "VLA",
+    "VLM",
+    "robotic",
+    "grasp",
+    "policy learning",
+    "action prediction"
+  ],
+  "config_categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG",
+    "cs.RO"
+  ],
+  "papers": [
+    {
+      "arxiv_id": "2603.26322v1",
+      "title": "DiffusionAnything: End-to-End In-context Diffusion Learning for Unified Navigation and Pre-Grasp Motion",
+      "authors": [
+        "Iana Zhura",
+        "Yara Mahmoud",
+        "Jeffrin Sam",
+        "Hung Khang Nguyen",
+        "Didar Seyidov",
+        "Miguel Altamirano Cabrera",
+        "Dzmitry Tsetserukou"
+      ],
+      "abstract": "Efficiently predicting motion plans directly from vision remains a fundamental challenge in robotics, where planning typically requires explicit goal specification and task-specific design. Recent vision-language-action (VLA) models infer actions directly from visual input but demand massive computational resources, extensive training data, and fail zero-shot in novel scenes. We present a unified image-space diffusion policy handling both meter-scale navigation and centimeter-scale manipulation via multi-scale feature modulation, with only 5 minutes of self-supervised data per task. Three key innovations drive the framework: (1) Multi-scale FiLM conditioning on task mode, depth scale, and spatial attention enables task-appropriate behavior in a single model; (2) trajectory-aligned depth prediction focuses metric 3D reasoning along generated waypoints; (3) self-supervised attention from AnyTraverse enables goal-directed inference without vision-language models and depth sensors. Operating purely from RGB input (2.0 GB memory, 10 Hz), the model achieves robust zero-shot generalization to novel scenes while remaining suitable for onboard deployment.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26322v1",
+      "published": "2026-03-27T11:40:13Z",
+      "updated": "2026-03-27T11:40:13Z",
+      "has_code": false,
+      "score": 0.462,
+      "reason": "Matched keywords: robot, manipulation, diffusion, VLA, robotic, grasp",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26666v1",
+      "title": "VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation",
+      "authors": [
+        "Zhide Zhong",
+        "Haodong Yan",
+        "Junfeng Li",
+        "Junjie He",
+        "Tianran Zhang",
+        "Haoang Li"
+      ],
+      "abstract": "Although pre-trained Vision-Language-Action (VLA) models exhibit impressive generalization in robotic manipulation, post-training remains crucial to ensure reliable performance during deployment. However, standard offline Supervised Fine-Tuning (SFT) suffers from distribution shifts and catastrophic forgetting of pre-trained capabilities, while online Reinforcement Learning (RL) struggles with sparse rewards and poor sample efficiency. In this paper, we propose On-Policy VLA Distillation (VLA-OPD), a framework bridging the efficiency of SFT with the robustness of RL. Instead of relying on sparse environmental rewards, VLA-OPD leverages an expert teacher to provide dense, token-level supervision on the student's self-generated trajectories. This enables active error correction on policy-induced states while preserving pre-trained general capabilities through gentle alignment. Crucially, we formulate VLA-OPD via a Reverse-KL objective. Unlike standard Forward-KL that induces mode-covering entropy explosion, or Hard-CE that causes premature entropy collapse, our bounded mode-seeking objective ensures stable policy learning by filtering out the teacher's epistemic uncertainty while maintaining action diversity. Experiments on LIBERO and RoboTwin2.0 benchmarks demonstrate that VLA-OPD significantly improves sample efficiency over RL and robustness over SFT, while effectively mitigating catastrophic forgetting during post-training.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26666v1",
+      "published": "2026-03-27T17:59:33Z",
+      "updated": "2026-03-27T17:59:33Z",
+      "has_code": false,
+      "score": 0.385,
+      "reason": "Matched keywords: robot, manipulation, VLA, robotic, policy learning",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26320v1",
+      "title": "DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching",
+      "authors": [
+        "Jiayi Chen",
+        "Wenxuan Song",
+        "Shuai Chen",
+        "Jingbo Wang",
+        "Zhijun Li",
+        "Haoang Li"
+      ],
+      "abstract": "Vision--Language--Action (VLA) models that encode actions using a discrete tokenization scheme are increasingly adopted for robotic manipulation, but existing decoding paradigms remain fundamentally limited. Whether actions are decoded sequentially by autoregressive VLAs or in parallel by discrete diffusion VLAs, once a token is generated, it is typically fixed and cannot be revised in subsequent iterations, so early token errors cannot be effectively corrected later. We propose DFM-VLA, a discrete flow matching VLA for iterative refinement of action tokens. DFM-VLA~models a token-level probability velocity field that dynamically updates the full action sequence across refinement iterations. We investigate two ways to construct the velocity field: an auxiliary velocity-head formulation and an action-embedding-guided formulation. Our framework further adopts a two-stage decoding strategy with an iterative refinement stage followed by deterministic validation for stable convergence. Extensive experiments on CALVIN, LIBERO, and real-world manipulation tasks show that DFM-VLA consistently outperforms strong autoregressive, discrete diffusion, and continuous diffusion baselines in manipulation performance while retaining high inference efficiency. In particular, DFM-VLA achieves an average success length of 4.44 on CALVIN and an average success rate of 95.7\\% on LIBERO, highlighting the value of action refinement via discrete flow matching for robotic manipulation. Our project is available \\url{https://chris1220313648.github.io/DFM-VLA/}",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26320v1",
+      "published": "2026-03-27T11:38:43Z",
+      "updated": "2026-03-27T11:38:43Z",
+      "has_code": false,
+      "score": 0.385,
+      "reason": "Matched keywords: robot, manipulation, diffusion, VLA, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26660v1",
+      "title": "Ruka-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning",
+      "authors": [
+        "Xinqi",
+        "Liu",
+        "Ruoxi Hu",
+        "Alejandro Ojeda Olarte",
+        "Zhuoran Chen",
+        "Kenny Ma",
+        "Charles Cheng Ji",
+        "Lerrel Pinto",
+        "Raunaq Bhirangi",
+        "Irmak Guzey"
+      ],
+      "abstract": "Lack of accessible and dexterous robot hardware has been a significant bottleneck to achieving human-level dexterity in robots. Last year, we released Ruka, a fully open-sourced, tendon-driven humanoid hand with 11 degrees of freedom - 2 per finger and 3 at the thumb - buildable for under $1,300. It was one of the first fully open-sourced humanoid hands, and introduced a novel data-driven approach to finger control that captures tendon dynamics within the control system. Despite these contributions, Ruka lacked two degrees of freedom essential for closely imitating human behavior: wrist mobility and finger adduction/abduction. In this paper, we introduce Ruka-v2: a fully open-sourced, tendon-driven humanoid hand featuring a decoupled 2-DOF parallel wrist and abduction/adduction at the fingers. The parallel wrist adds smooth, independent flexion/extension and radial/ulnar deviation, enabling manipulation in confined environments such as cabinets. Abduction enables motions such as grasping thin objects, in-hand rotation, and calligraphy. We present the design of Ruka-v2 and evaluate it against Ruka through user studies on teleoperated tasks, finding a 51.3% reduction in completion time and a 21.2% increase in success rate. We further demonstrate its full range of applications for robot learning: bimanual and single-arm teleoperation across 13 dexterous tasks, and autonomous policy learning on 3 tasks. All 3D print files, assembly instructions, controller software, and videos are available at https://ruka-hand-v2.github.io/ .",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2603.26660v1",
+      "published": "2026-03-27T17:58:03Z",
+      "updated": "2026-03-27T17:58:03Z",
+      "has_code": false,
+      "score": 0.308,
+      "reason": "Matched keywords: robot, manipulation, grasp, policy learning",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26441v1",
+      "title": "120 Minutes and a Laptop: Minimalist Image-goal Navigation via Unsupervised Exploration and Offline RL",
+      "authors": [
+        "Xiaoming Liu",
+        "Borong Zhang",
+        "Qingbiao Li",
+        "Steven Morad"
+      ],
+      "abstract": "The prevailing paradigm for image-goal visual navigation often assumes access to large-scale datasets, substantial pretraining, and significant computational resources. In this work, we challenge this assumption. We show that we can collect a dataset, train an in-domain policy, and deploy it to the real world (1) in less than 120 minutes, (2) on a consumer laptop, (3) without any human intervention. Our method, MINav, formulates image-goal navigation as an offline goal-conditioned reinforcement learning problem, combining unsupervised data collection with hindsight goal relabeling and offline policy learning. Experiments in simulation and the real world show that MINav improves exploration efficiency, outperforms zero-shot navigation baselines in target environments, and scales favorably with dataset size. These results suggest that effective real-world robotic learning can be achieved with high computational efficiency, lowering the barrier to rapid policy prototyping and deployment.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26441v1",
+      "published": "2026-03-27T14:09:33Z",
+      "updated": "2026-03-27T14:09:33Z",
+      "has_code": false,
+      "score": 0.231,
+      "reason": "Matched keywords: robot, robotic, policy learning",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26403v1",
+      "title": "T-800: An 800 Hz Data Glove for Precise Hand Gesture Tracking",
+      "authors": [
+        "Haoyang Luo",
+        "Zihang Zhao",
+        "Leiyao Cui",
+        "Saiyao Zhang",
+        "Liu Yang",
+        "Zhi Han",
+        "Xiyuan Tang",
+        "Yixin Zhu"
+      ],
+      "abstract": "Human dexterity relies on rapid, sub-second motor adjustments, yet capturing these high-frequency dynamics remains an enduring challenge in biomechanics and robotics. Existing motion capture paradigms are compromised by a trade-off between temporal resolution and visual occlusion, failing to record the fine-grained hand motion of fast, contact-rich manipulation. Here we introduce T-800, a high-bandwidth data glove system that achieves synchronized, full-hand motion tracking at 800 Hz. By integrating a novel broadcast-based synchronization mechanism with a mechanical stress isolation architecture, our system maintains sub-frame temporal alignment across 18 distributed inertial measurement units (IMUs) during extended, vigorous movements. We demonstrate that T-800 recovers fine-grained manipulation details previously lost to temporal undersampling. Our analysis reveals that human dexterity exhibits significantly high-frequency motion energy (>100 Hz) that was fundamentally inaccessible due to the Nyquist sampling limit imposed by previous hardware constraints. To validate the system's utility for robotic manipulation, we implement a kinematic retargeting algorithm that maps T-800's high-fidelity human gestures onto dexterous robotic hand models. This demonstrates that the high-frequency motion data can be accurately translated while respecting the kinematic constraints of robotic hands, providing the rich behavioral data necessary for training robust control policies in the future.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26403v1",
+      "published": "2026-03-27T13:27:06Z",
+      "updated": "2026-03-27T13:27:06Z",
+      "has_code": false,
+      "score": 0.231,
+      "reason": "Matched keywords: robot, manipulation, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26360v1",
+      "title": "Realtime-VLA V2: Learning to Run VLAs Fast, Smooth, and Accurate",
+      "authors": [
+        "Chen Yang",
+        "Yucheng Hu",
+        "Yunchao Ma",
+        "Yunhuan Yang",
+        "Jing Tan",
+        "Haoqiang Fan"
+      ],
+      "abstract": "In deployment of the VLA models to real-world robotic tasks, execution speed matters. In previous work arXiv:2510.26742 we analyze how to make neural computation of VLAs on GPU fast. However, we leave the question of how to actually deploy the VLA system on the real robots open. In this report we describe a set of practical techniques to achieve the end-to-end result of running a VLA-driven robot at an impressive speed in real world tasks that require both accuracy and dexterity. The stack of technology ranges across calibration, planning & control, and learning based method to identify optimal execution speed. In the tasks we show, the robot even executes in a speed on par with casual human operation and approaching the hardware limit of our lightweight arm. The unaccelerated videos and inference traces are provided in https://dexmal.github.io/realtime-vla-v2/.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26360v1",
+      "published": "2026-03-27T12:37:44Z",
+      "updated": "2026-03-27T12:37:44Z",
+      "has_code": false,
+      "score": 0.231,
+      "reason": "Matched keywords: robot, VLA, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26263v1",
+      "title": "DRUM: Diffusion-based Raydrop-aware Unpaired Mapping for Sim2Real LiDAR Segmentation",
+      "authors": [
+        "Tomoya Miyawaki",
+        "Kazuto Nakashima",
+        "Yumi Iwashita",
+        "Ryo Kurazume"
+      ],
+      "abstract": "LiDAR-based semantic segmentation is a key component for autonomous mobile robots, yet large-scale annotation of LiDAR point clouds is prohibitively expensive and time-consuming. Although simulators can provide labeled synthetic data, models trained on synthetic data often underperform on real-world data due to a data-level domain gap. To address this issue, we propose DRUM, a novel Sim2Real translation framework. We leverage a diffusion model pre-trained on unlabeled real-world data as a generative prior and translate synthetic data by reproducing two key measurement characteristics: reflectance intensity and raydrop noise. To improve sample fidelity, we introduce a raydrop-aware masked guidance mechanism that selectively enforces consistency with the input synthetic data while preserving realistic raydrop noise induced by the diffusion prior. Experimental results demonstrate that DRUM consistently improves Sim2Real performance across multiple representations of LiDAR data. The project page is available at https://miya-tomoya.github.io/drum.",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26263v1",
+      "published": "2026-03-27T10:30:49Z",
+      "updated": "2026-03-27T10:30:49Z",
+      "has_code": true,
+      "score": 0.204,
+      "reason": "Matched keywords: robot, diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26661v1",
+      "title": "GaussianGPT: Towards Autoregressive 3D Gaussian Scene Generation",
+      "authors": [
+        "Nicolas von Lützow",
+        "Barbara Rössle",
+        "Katharina Schmid",
+        "Matthias Nießner"
+      ],
+      "abstract": "Most recent advances in 3D generative modeling rely on diffusion or flow-matching formulations. We instead explore a fully autoregressive alternative and introduce GaussianGPT, a transformer-based model that directly generates 3D Gaussians via next-token prediction, thus facilitating full 3D scene generation. We first compress Gaussian primitives into a discrete latent grid using a sparse 3D convolutional autoencoder with vector quantization. The resulting tokens are serialized and modeled using a causal transformer with 3D rotary positional embedding, enabling sequential generation of spatial structure and appearance. Unlike diffusion-based methods that refine scenes holistically, our formulation constructs scenes step-by-step, naturally supporting completion, outpainting, controllable sampling via temperature, and flexible generation horizons. This formulation leverages the compositional inductive biases and scalability of autoregressive modeling while operating on explicit representations compatible with modern neural rendering pipelines, positioning autoregressive transformers as a complementary paradigm for controllable and context-aware 3D generation.",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26661v1",
+      "published": "2026-03-27T17:58:05Z",
+      "updated": "2026-03-27T17:58:05Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: 3D Gaussian, diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26659v1",
+      "title": "Partial Motion Imitation for Learning Cart Pushing with Legged Manipulators",
+      "authors": [
+        "Mili Das",
+        "Morgan Byrd",
+        "Donghoon Baek",
+        "Sehoon Ha"
+      ],
+      "abstract": "Loco-manipulation is a key capability for legged robots to perform practical mobile manipulation tasks, such as transporting and pushing objects, in real-world environments. However, learning robust loco-manipulation skills remains challenging due to the difficulty of maintaining stable locomotion while simultaneously performing precise manipulation behaviors. This work proposes a partial imitation learning approach that transfers the locomotion style learned from a locomotion task to cart loco-manipulation. A robust locomotion policy is first trained with extensive domain and terrain randomization, and a loco-manipulation policy is then learned by imitating only lower-body motions using a partial adversarial motion prior. We conduct experiments demonstrating that the learned policy successfully pushes a cart along diverse trajectories in IsaacLab and transfers effectively to MuJoCo. We also compare our method to several baselines and show that the proposed approach achieves more stable and accurate loco-manipulation behaviors.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26659v1",
+      "published": "2026-03-27T17:56:42Z",
+      "updated": "2026-03-27T17:56:42Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, manipulation",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26638v1",
+      "title": "Drive-Through 3D Vehicle Exterior Reconstruction via Dynamic-Scene SfM and Distortion-Aware Gaussian Splatting",
+      "authors": [
+        "Nitin Kulkarni",
+        "Akhil Devarashetti",
+        "Charlie Cluss",
+        "Livio Forte",
+        "Philip Schneider",
+        "Chunming Qiao",
+        "Alina Vereshchaka"
+      ],
+      "abstract": "High-fidelity 3D reconstruction of vehicle exteriors improves buyer confidence in online automotive marketplaces, but generating these models in cluttered dealership drive-throughs presents severe technical challenges. Unlike static-scene photogrammetry, this setting features a dynamic vehicle moving against heavily cluttered, static backgrounds. This problem is further compounded by wide-angle lens distortion, specular automotive paint, and non-rigid wheel rotations that violate classical epipolar constraints. We propose an end-to-end pipeline utilizing a two-pillar camera rig. First, we resolve dynamic-scene ambiguities by coupling SAM 3 for instance segmentation with motion-gating to cleanly isolate the moving vehicle, explicitly masking out non-rigid wheels to enforce strict epipolar geometry. Second, we extract robust correspondences directly on raw, distorted 4K imagery using the RoMa v2 learned matcher guided by semantic confidence masks. Third, these matches are integrated into a rig-aware SfM optimization that utilizes CAD-derived relative pose priors to eliminate scale drift. Finally, we use a distortion-aware 3D Gaussian Splatting framework (3DGUT) coupled with a stochastic Markov Chain Monte Carlo (MCMC) densification strategy to render reflective surfaces. Evaluations on 25 real-world vehicles across 10 dealerships demonstrate that our full pipeline achieves a PSNR of 28.66 dB, an SSIM of 0.89, and an LPIPS of 0.21 on held-out views, representing a 3.85 dB improvement over standard 3D-GS, delivering inspection-grade interactive 3D models without controlled studio infrastructure.",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26638v1",
+      "published": "2026-03-27T17:42:42Z",
+      "updated": "2026-03-27T17:42:42Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: 3D Gaussian, Gaussian Splatting",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26589v1",
+      "title": "The Limits of Learning from Pictures and Text: Vision-Language Models and Embodied Scene Understanding",
+      "authors": [
+        "Gillian Rosenberg",
+        "Skylar Stadhard",
+        "Bruce C. Hansen",
+        "Michelle R. Greene"
+      ],
+      "abstract": "What information is sufficient to learn the full richness of human scene understanding? The distributional hypothesis holds that the statistical co-occurrence of language and images captures the conceptual knowledge underlying visual cognition. Vision-language models (VLMs) are trained on massive paired text-image corpora but lack embodied experience, making them an ideal test of the distributional hypothesis. We report two experiments comparing descriptions generated by 18 VLMs to those of over 2000 human observers across 15 high-level scene understanding tasks, spanning general knowledge, affordances, sensory experiences, affective responses, and future prediction. Because many tasks lack ground truth answers, we developed a Human-Calibrated Cosine Distance (HCD) metric that measures VLM output similarity to the distribution of human responses, scaled by within-human variability. In Experiment 1, VLMs approached human-level performance on general knowledge tasks, but showed a robust deficit for affordance tasks that resisted prompt engineering and did not improve with newer model releases. In Experiment 2, we tested six mechanistic hypotheses for explaining this affordance gap, finding that the deficit was structural rather than stylistic and was not resolved by providing explicit spatial information. Corpus analyses revealed that image captioning datasets contain sparse agent-addressed affordance language, consistent with Gricean accounts of why embodied knowledge may be systematically underrepresented in language. Together, these findings suggest that distributional learning from images and text is insufficient for affordance-based scene understanding, implying that some dimensions of human visual cognition may require the kind of agent-centered, three-dimensional experience that no photograph or caption can encode.",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26589v1",
+      "published": "2026-03-27T16:52:46Z",
+      "updated": "2026-03-27T16:52:46Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: embodied, VLM",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26584v1",
+      "title": "Scene Grounding In the Wild",
+      "authors": [
+        "Tamir Cohen",
+        "Leo Segre",
+        "Shay Shomer-Chai",
+        "Shai Avidan",
+        "Hadar Averbuch-Elor"
+      ],
+      "abstract": "Reconstructing accurate 3D models of large-scale real-world scenes from unstructured, in-the-wild imagery remains a core challenge in computer vision, especially when the input views have little or no overlap. In such cases, existing reconstruction pipelines often produce multiple disconnected partial reconstructions or erroneously merge non-overlapping regions into overlapping geometry. In this work, we propose a framework that grounds each partial reconstruction to a complete reference model of the scene, enabling globally consistent alignment even in the absence of visual overlap. We obtain reference models from dense, geospatially accurate pseudo-synthetic renderings derived from Google Earth Studio. These renderings provide full scene coverage but differ substantially in appearance from real-world photographs. Our key insight is that, despite this significant domain gap, both domains share the same underlying scene semantics. We represent the reference model using 3D Gaussian Splatting, augmenting each Gaussian with semantic features, and formulate alignment as an inverse feature-based optimization scheme that estimates a global 6DoF pose and scale while keeping the reference model fixed. Furthermore, we introduce the WikiEarth dataset, which registers existing partial 3D reconstructions with pseudo-synthetic reference models. We demonstrate that our approach consistently improves global alignment when initialized with various classical and learning-based pipelines, while mitigating failure modes of state-of-the-art end-to-end models. All code and data will be released.",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26584v1",
+      "published": "2026-03-27T16:41:20Z",
+      "updated": "2026-03-27T16:41:20Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: 3D Gaussian, Gaussian Splatting",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26543v1",
+      "title": "User Involvement in Robotic Wheelchair Development: A Decade of Limited Progress",
+      "authors": [
+        "Mario Andres Chavarria",
+        "Santiago Price Torrendell",
+        "Aude Billard",
+        "Samia Hurst",
+        "Sébastien Kessler",
+        "Michael Stein",
+        "Kenji Suzuki",
+        "Sophie Weerts",
+        "Diego Paez-Granados",
+        "Minerva Rivas Velarde"
+      ],
+      "abstract": "Robotic wheelchairs (RWs) offer significant potential to enhance autonomy and participation for people with mobility impairments, yet many systems have failed to achieve sustained real-world adoption. This narrative literature review examined the extent and quality of end-user involvement in RW design, development, and evaluation over the past decade (2015--2025), assessed against core principles shared by major user-involvement approaches (e.g., user-/human-centered design, participatory/co-design, and inclusive design). The findings indicate that user involvement remains limited and is predominantly concentrated in late-stage evaluation rather than in early requirements definition or iterative co-design. Of the 399 records screened, only 23 studies (about 6%) met the inclusion criteria of verifiable end-user involvement, and many relied on small samples, often around ten participants, with limited justification for sample size selection, proxy users, laboratory-based validation, and non-standardized feedback methods. Research teams were largely engineering-dominated (about 89%) and geographically concentrated in high-income countries. Despite strong evidence that sustained user engagement improves usability and adoption in assistive technology, its systematic implementation in RW research remains rare. Advancing the field requires embedding participatory methodologies throughout the design lifecycle and addressing systemic barriers that constrain meaningful user involvement.",
+      "categories": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26543v1",
+      "published": "2026-03-27T15:51:48Z",
+      "updated": "2026-03-27T15:51:48Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26467v1",
+      "title": "Addressing Ambiguity in Imitation Learning through Product of Experts based Negative Feedback",
+      "authors": [
+        "John Bateman",
+        "Andy M. Tyrrell",
+        "Jihong Zhu"
+      ],
+      "abstract": "Programming robots to perform complex tasks is often difficult and time consuming, requiring expert knowledge and skills in robot software and sometimes hardware. Imitation learning is a method for training robots to perform tasks by leveraging human expertise through demonstrations. Typically, the assumption is that those demonstrations are performed by a single, highly competent expert. However, in many real-world applications that use user demonstrations for tasks or incorporate both user data and pretrained data, such as home robotics including assistive robots, this is unlikely to be the case. This paper presents research towards a system which can leverage suboptimal demonstrations to solve ambiguous tasks; and particularly learn from its own failures. This is a negative-feedback system which achieves significant improvement over purely positive imitation learning for ambiguous tasks, achieving a 90% improvement in success rate against a system that does not utilise negative feedback, compared to a 50% improvement in success rate when utilised on a real robot, as well as demonstrating higher efficacy, memory efficiency and time efficiency than a comparable negative feedback scheme. The novel scheme presented in this paper is validated through simulated and real-robot experiments.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26467v1",
+      "published": "2026-03-27T14:32:52Z",
+      "updated": "2026-03-27T14:32:52Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26466v1",
+      "title": "Adapt as You Say: Online Interactive Bimanual Skill Adaptation via Human Language Feedback",
+      "authors": [
+        "Zhuo Li",
+        "Dianxi Li",
+        "Tao Teng",
+        "Quentin Rouxel",
+        "Zhipeng Dong",
+        "Dennis Hong",
+        "Darwin Caldwell",
+        "Fei Chen"
+      ],
+      "abstract": "Developing general-purpose robots capable of autonomously operating in human living environments requires the ability to adapt to continuously evolving task conditions. However, adapting high-dimensional coordinated bimanual skills to novel task variations at deployment remains a fundamental challenge. In this work, we present BiSAIL (Bimanual Skill Adaptation via Interactive Language), a novel framework that enables zero-shot online adaptation of offline-learned bimanual skills through interactive language feedback. The key idea of BiSAIL is to adopt a hierarchical reason-then-modulate paradigm, which first infers generalized adaptation objectives from multimodal task variations, and then adapts bimanual motions via diffusion modulation to achieve the inferred objectives. Extensive real-robot experiments across six bimanual tasks and two dual-arm platforms demonstrate that BiSAIL significantly outperforms existing methods in human-in-the-loop adaptability, task generalization and cross-embodiment scalability. This work enables the development of adaptive bimanual assistants that can be flexibly customized by non-expert users via intuitive verbal corrections. Experimental videos and code are available at https://rip4kobe.github.io/BiSAIL/.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26466v1",
+      "published": "2026-03-27T14:32:40Z",
+      "updated": "2026-03-27T14:32:40Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26412v1",
+      "title": "Generalizable task-oriented object grasping through LLM-guided ontology and similarity-based planning",
+      "authors": [
+        "Hao Chen",
+        "Takuya Kiyokawa",
+        "Weiwei Wan",
+        "Kensuke Harada"
+      ],
+      "abstract": "Task-oriented grasping (TOG) is more challenging than simple object grasping because it requires precise identification of object parts and careful selection of grasping areas to ensure effective and robust manipulation. While recent approaches have trained large-scale vision-language models to integrate part-level object segmentation with task-aware grasp planning, their instability in part recognition and grasp inference limits their ability to generalize across diverse objects and tasks. To address this issue, we introduce a novel, geometry-centric strategy for more generalizable TOG that does not rely on semantic features from visual recognition, effectively overcoming the viewpoint sensitivity of model-based approaches. Our main proposals include: 1) an object-part-task ontology for functional part selection based on intuitive human commands, constructed using a Large Language Model (LLM); 2) a sampling-based geometric analysis method for identifying the selected object part from observed point clouds, incorporating multiple point distribution and distance metrics; and 3) a similarity matching framework for imitative grasp planning, utilizing similar known objects with pre-existing segmentation and grasping knowledge as references to guide the planning for unknown targets. We validate the high accuracy of our approach in functional part selection, identification, and grasp generation through real-world experiments. Additionally, we demonstrate the method's generalization capabilities to novel-category objects by extending existing ontological knowledge, showcasing its adaptability to a broad range of objects and tasks.",
+      "categories": [
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26412v1",
+      "published": "2026-03-27T13:39:57Z",
+      "updated": "2026-03-27T13:39:57Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: manipulation, grasp",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26362v1",
+      "title": "HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models",
+      "authors": [
+        "MD Khalequzzaman Chowdhury Sayem",
+        "Mubarrat Tajoar Chowdhury",
+        "Yihalem Yimolal Tiruneh",
+        "Muneeb A. Khan",
+        "Muhammad Salman Ali",
+        "Binod Bhattarai",
+        "Seungryul Baek"
+      ],
+      "abstract": "Understanding the fine-grained articulation of human hands is critical in high-stakes settings such as robot-assisted surgery, chip manufacturing, and AR/VR-based human-AI interaction. Despite achieving near-human performance on general vision-language benchmarks, current vision-language models (VLMs) struggle with fine-grained spatial reasoning, especially in interpreting complex and articulated hand poses. We introduce HandVQA, a large-scale diagnostic benchmark designed to evaluate VLMs' understanding of detailed hand anatomy through visual question answering. Built upon high-quality 3D hand datasets (FreiHAND, InterHand2.6M, FPHA), our benchmark includes over 1.6M controlled multiple-choice questions that probe spatial relationships between hand joints, such as angles, distances, and relative positions. We evaluate several state-of-the-art VLMs (LLaVA, DeepSeek and Qwen-VL) in both base and fine-tuned settings, using lightweight fine-tuning via LoRA. Our findings reveal systematic limitations in current models, including hallucinated finger parts, incorrect geometric interpretations, and poor generalization. HandVQA not only exposes these critical reasoning gaps but provides a validated path to improvement. We demonstrate that the 3D-grounded spatial knowledge learned from our benchmark transfers in a zero-shot setting, significantly improving accuracy of model on novel downstream tasks like hand gesture recognition (+10.33%) and hand-object interaction (+2.63%).",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26362v1",
+      "published": "2026-03-27T12:42:26Z",
+      "updated": "2026-03-27T12:42:26Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, VLM",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26211v1",
+      "title": "Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding",
+      "authors": [
+        "Shrinidhi Kumbhar",
+        "Haofu Liao",
+        "Srikar Appalaraju",
+        "Kunwar Yashraj Singh"
+      ],
+      "abstract": "Autoregressive (AR) vision-language models (VLMs) have long dominated multimodal understanding, reasoning, and graphical user interface (GUI) grounding. Recently, discrete diffusion vision-language models (DVLMs) have shown strong performance in multimodal reasoning, offering bidirectional attention, parallel token generation, and iterative refinement. However, their potential for GUI grounding remains unexplored. In this work, we evaluate whether discrete DVLMs can serve as a viable alternative to AR models for GUI grounding. We adapt LLaDA-V for single-turn action and bounding-box prediction, framing the task as text generation from multimodal input. To better capture the hierarchical structure of bounding-box geometry, we propose a hybrid masking schedule that combines linear and deterministic masking, improving grounding accuracy by up to 6.1 points in Step Success Rate (SSR) over the GUI-adapted LLaDA-V trained with linear masking. Evaluations on four datasets spanning web, desktop, and mobile interfaces show that the adapted diffusion model with hybrid masking consistently outperforms the linear-masked variant and performs competitively with autoregressive counterparts despite limited pretraining. Systematic ablations reveal that increasing diffusion steps, generation length, and block length improves accuracy but also increases latency, with accuracy plateauing beyond a certain number of diffusion steps. Expanding the training data with diverse GUI domains further reduces latency by about 1.3 seconds and improves grounding accuracy by an average of 20 points across benchmarks. These results demonstrate that discrete DVLMs are a promising modeling framework for GUI grounding and represent an important step toward diffusion-based GUI agents.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2603.26211v1",
+      "published": "2026-03-27T09:34:07Z",
+      "updated": "2026-03-27T09:34:07Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: diffusion, VLM",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26206v1",
+      "title": "4DRaL: Bridging 4D Radar with LiDAR for Place Recognition using Knowledge Distillation",
+      "authors": [
+        "Ningyuan Huang",
+        "Zhiheng Li",
+        "Zheng Fang"
+      ],
+      "abstract": "Place recognition is crucial for loop closure detection and global localization in robotics. Although mainstream algorithms typically rely on cameras and LiDAR, these sensors are susceptible to adverse weather conditions. Fortunately, the recently developed 4D millimeter-wave radar (4D radar) offers a promising solution for all-weather place recognition. However, the inherent noise and sparsity in 4D radar data significantly limit its performance. Thus, in this paper, we propose a novel framework called 4DRaL that leverages knowledge distillation (KD) to enhance the place recognition performance of 4D radar. Its core is to adopt a high-performance LiDAR-to-LiDAR (L2L) place recognition model as a teacher to guide the training of a 4D radar-to-4D radar (R2R) place recognition model. 4DRaL comprises three key KD modules: a local image enhancement module to handle the sparsity of raw 4D radar points, a feature distribution distillation module that ensures the student model generates more discriminative features, and a response distillation module to maintain consistency in feature space between the teacher and student models. More importantly, 4DRaL can also be trained for 4D radar-to-LiDAR (R2L) place recognition through different module configurations. Experimental results prove that 4DRaL achieves state-of-the-art performance in both R2R and R2L tasks regardless of normal or adverse weather.",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "url": "http://arxiv.org/abs/2603.26206v1",
+      "published": "2026-03-27T09:28:51Z",
+      "updated": "2026-03-27T09:28:51Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: robot, robotic",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26181v1",
+      "title": "GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport",
+      "authors": [
+        "Youngju Na",
+        "Jaeseong Yun",
+        "Soohyun Ryu",
+        "Hyunsu Kim",
+        "Sung-Eui Yoon",
+        "Suyong Yeon"
+      ],
+      "abstract": "While 3D Gaussian splatting has emerged as a powerful paradigm, it fundamentally fails to model transparency such as glass panels. The core challenge lies in decoupling the intertwined radiance contributions from transparent interfaces and the transmitted geometry observed through the glass. We present GLINT, a framework that models scene-scale transparency through explicit decomposed Gaussian representation. GLINT reconstructs the primary interface and models reflected and transmitted radiance separately, enabling consistent radiance transport. During optimization, GLINT bootstraps transparency localization from geometry-separation cues induced by the decomposition, together with geometry and material priors from a pre-trained video relighting model. Extensive experiments demonstrate consistent improvements over prior methods for reconstructing complex transparent scenes.",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26181v1",
+      "published": "2026-03-27T08:52:12Z",
+      "updated": "2026-03-27T08:52:12Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: 3D Gaussian, Gaussian Splatting",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26067v1",
+      "title": "R-PGA: Robust Physical Adversarial Camouflage Generation via Relightable 3D Gaussian Splatting",
+      "authors": [
+        "Tianrui Lou",
+        "Siyuan Liang",
+        "Jiawei Liang",
+        "Yuze Gao",
+        "Xiaochun Cao"
+      ],
+      "abstract": "Physical adversarial camouflage poses a severe security threat to autonomous driving systems by mapping adversarial textures onto 3D objects. Nevertheless, current methods remain brittle in complex dynamic scenarios, failing to generalize across diverse geometric (e.g., viewing configurations) and radiometric (e.g., dynamic illumination, atmospheric scattering) variations. We attribute this deficiency to two fundamental limitations in simulation and optimization. First, the reliance on coarse, oversimplified simulations (e.g., via CARLA) induces a significant domain gap, confining optimization to a biased feature space. Second, standard strategies targeting average performance result in a rugged loss landscape, leaving the camouflage vulnerable to configuration shifts.To bridge these gaps, we propose the Relightable Physical 3D Gaussian Splatting (3DGS) based Attack framework (R-PGA). Technically, to address the simulation fidelity issue, we leverage 3DGS to ensure photo-realistic reconstruction and augment it with physically disentangled attributes to decouple intrinsic material from lighting. Furthermore, we design a hybrid rendering pipeline that leverages precise Relightable 3DGS for foreground rendering, while employing a pre-trained image translation model to synthesize plausible relighted backgrounds that align with the relighted foreground.To address the optimization robustness issue, we propose the Hard Physical Configuration Mining (HPCM) module, designed to actively mine worst-case physical configurations and suppress their corresponding loss peaks. This strategy not only diminishes the overall loss magnitude but also effectively flattens the rugged loss landscape, ensuring consistent adversarial effectiveness and robustness across varying physical configurations.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2603.26067v1",
+      "published": "2026-03-27T04:38:04Z",
+      "updated": "2026-03-27T04:38:04Z",
+      "has_code": false,
+      "score": 0.154,
+      "reason": "Matched keywords: 3D Gaussian, Gaussian Splatting",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26639v1",
+      "title": "Make Geometry Matter for Spatial Reasoning",
+      "authors": [
+        "Shihua Zhang",
+        "Qiuhong Shen",
+        "Shizun Wang",
+        "Tianbo Pan",
+        "Xinchao Wang"
+      ],
+      "abstract": "Empowered by large-scale training, vision-language models (VLMs) achieve strong image and video understanding, yet their ability to perform spatial reasoning in both static scenes and dynamic videos remains limited. Recent advances try to handle this limitation by injecting geometry tokens from pretrained 3D foundation models into VLMs. Nevertheless, we observe that naive token fusion followed by standard fine-tuning in this line of work often leaves such geometric cues underutilized for spatial reasoning, as VLMs tend to rely heavily on 2D visual cues. In this paper, we propose GeoSR, a framework designed to make geometry matter by encouraging VLMs to actively reason with geometry tokens. GeoSR introduces two key components: (1) Geometry-Unleashing Masking, which strategically masks portions of 2D vision tokens during training to weaken non-geometric shortcuts and force the model to consult geometry tokens for spatial reasoning; and (2) Geometry-Guided Fusion, a gated routing mechanism that adaptively amplifies geometry token contributions in regions where geometric evidence is critical. Together, these designs unleash the potential of geometry tokens for spatial reasoning tasks. Extensive experiments on both static and dynamic spatial reasoning benchmarks demonstrate that GeoSR consistently outperforms prior methods and establishes new state-of-the-art performance by effectively leveraging geometric information. The project page is available at https://suhzhang.github.io/GeoSR/.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "url": "http://arxiv.org/abs/2603.26639v1",
+      "published": "2026-03-27T17:45:12Z",
+      "updated": "2026-03-27T17:45:12Z",
+      "has_code": true,
+      "score": 0.127,
+      "reason": "Matched keywords: VLM",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26588v1",
+      "title": "From Synthetic Data to Real Restorations: Diffusion Model for Patient-specific Dental Crown Completion",
+      "authors": [
+        "Dávid Pukanec",
+        "Tibor Kubík",
+        "Michal Španěl"
+      ],
+      "abstract": "We present ToothCraft, a diffusion-based model for the contextual generation of tooth crowns, trained on artificially created incomplete teeth. Building upon recent advancements in conditioned diffusion models for 3D shapes, we developed a model capable of an automated tooth crown completion conditioned on local anatomical context. To address the lack of training data for this task, we designed an augmentation pipeline that generates incomplete tooth geometries from a publicly available dataset of complete dental arches (3DS, ODD). By synthesising a diverse set of training examples, our approach enables robust learning across a wide spectrum of tooth defects. Experimental results demonstrate the strong capability of our model to reconstruct complete tooth crowns, achieving an intersection over union (IoU) of 81.8% and a Chamfer Distance (CD) of 0.00034 on synthetically damaged testing restorations. Our experiments demonstrate that the model can be applied directly to real-world cases, effectively filling in incomplete teeth, while generated crowns show minimal intersection with the opposing dentition, thus reducing the risk of occlusal interference. Access to the code, model weights, and dataset information will be available at: https://github.com/ikarus1211/VISAPP_ToothCraft",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "url": "http://arxiv.org/abs/2603.26588v1",
+      "published": "2026-03-27T16:51:40Z",
+      "updated": "2026-03-27T16:51:40Z",
+      "has_code": true,
+      "score": 0.127,
+      "reason": "Matched keywords: diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26509v1",
+      "title": "Conditional Diffusion for 3D CT Volume Reconstruction from 2D X-rays",
+      "authors": [
+        "Martin Rath",
+        "Morteza Ghahremani",
+        "Yitong Li",
+        "Ashkan Taghipour",
+        "Marcus Makowski",
+        "Christian Wachinger"
+      ],
+      "abstract": "Computed tomography (CT) provides rich 3D anatomical details but is often constrained by high radiation exposure, substantial costs, and limited availability. While standard chest X-rays are cost-effective and widely accessible, they only provide 2D projections with limited pathological information. Reconstructing 3D CT volumes from 2D X-rays offers a transformative solution to increase diagnostic accessibility, yet existing methods predominantly rely on synthetic X-ray projections, limiting clinical generalization. In this work, we propose AXON, a multi-stage diffusion-based framework that reconstructs high-fidelity 3D CT volumes directly from real X-rays. AXON employs a coarse-to-fine strategy, with a Brownian Bridge diffusion model-based initial stage for global structural synthesis, followed by a ControlNet-based refinement stage for local intensity optimization. It also supports bi-planar X-ray input to mitigate depth ambiguities inherent in 2D-to-3D reconstruction. A super-resolution network is integrated to upscale the generated volumes to achieve diagnostic-grade resolution. Evaluations on both public and external datasets demonstrate that AXON significantly outperforms state-of-the-art baselines, achieving a 11.9% improvement in PSNR and a 11.0% increase in SSIM with robust generalizability across disparate clinical distributions. Our code is available at https://github.com/ai-med/AXON.",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26509v1",
+      "published": "2026-03-27T15:21:47Z",
+      "updated": "2026-03-27T15:21:47Z",
+      "has_code": true,
+      "score": 0.127,
+      "reason": "Matched keywords: diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26357v1",
+      "title": "MPDiT: Multi-Patch Global-to-Local Transformer Architecture For Efficient Flow Matching and Diffusion Model",
+      "authors": [
+        "Quan Dao",
+        "Dimitris Metaxas"
+      ],
+      "abstract": "Transformer architectures, particularly Diffusion Transformers (DiTs), have become widely used in diffusion and flow-matching models due to their strong performance compared to convolutional UNets. However, the isotropic design of DiTs processes the same number of patchified tokens in every block, leading to relatively heavy computation during training process. In this work, we introduce a multi-patch transformer design in which early blocks operate on larger patches to capture coarse global context, while later blocks use smaller patches to refine local details. This hierarchical design could reduces computational cost by up to 50\\% in GFLOPs while achieving good generative performance. In addition, we also propose improved designs for time and class embeddings that accelerate training convergence. Extensive experiments on the ImageNet dataset demonstrate the effectiveness of our architectural choices. Code is released at \\url{https://github.com/quandao10/MPDiT}",
+      "categories": [
+        "cs.CV"
+      ],
+      "url": "http://arxiv.org/abs/2603.26357v1",
+      "published": "2026-03-27T12:30:10Z",
+      "updated": "2026-03-27T12:30:10Z",
+      "has_code": true,
+      "score": 0.127,
+      "reason": "Matched keywords: diffusion",
+      "abstract_zh": ""
+    },
+    {
+      "arxiv_id": "2603.26167v1",
+      "title": "Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication",
+      "authors": [
+        "Yi Zhang",
+        "Hongbo Huang",
+        "Liang-Jie Zhang"
+      ],
+      "abstract": "Diffusion models generate high-quality images but pose serious risks like copyright violation and disinformation. Watermarking is a key defense for tracing and authenticating AI-generated content. However, existing methods rely on threshold-based detection, which only supports fuzzy matching and cannot recover structured watermark data bit-exactly, making them unsuitable for offline verification or applications requiring lossless metadata (e.g., licensing instructions). To address this problem, in this paper, we propose Gaussian Shannon, a watermarking framework that treats the diffusion process as a noisy communication channel and enables both robust tracing and exact bit recovery. Our method embeds watermarks in the initial Gaussian noise without fine-tuning or quality loss. We identify two types of channel interference, namely local bit flips and global stochastic distortions, and design a cascaded defense combining error-correcting codes and majority voting. This ensures reliable end-to-end transmission of semantic payloads. Experiments across three Stable Diffusion variants and seven perturbation types show that Gaussian Shannon achieves state-of-the-art bit-level accuracy while maintaining a high true positive rate, enabling trustworthy rights attribution in real-world deployment. The source code have been made available at: https://github.com/Rambo-Yi/Gaussian-Shannon",
+      "categories": [
+        "cs.CV",
+        "cs.CR"
+      ],
+      "url": "http://arxiv.org/abs/2603.26167v1",
+      "published": "2026-03-27T08:34:53Z",
+      "updated": "2026-03-27T08:34:53Z",
+      "has_code": true,
+      "score": 0.127,
+      "reason": "Matched keywords: diffusion",
+      "abstract_zh": ""
+    }
+  ]
+}
